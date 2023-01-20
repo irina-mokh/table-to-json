@@ -1,12 +1,34 @@
 @use '../../styles/vars';
 
 .app {
-	display: flex;
-	flex-direction: column;
+	display: grid;
 	min-height: 100vh;
-	
+	grid-template-rows: 70px 1fr 40px;
+
 	&__main {
-		flex-grow: 1;
+		padding: 1em;
 		background-color: vars.$gray;
+		height: 100%;
+
+		.content {
+			height: 100%;
+			display: flex;
+			justify-content: space-around;
+		}
 	}
+
+	.json {
+		height: 100%;
+		width: 30vw;
+		&__textarea {
+			display: block;
+			height: 100%;
+			width: 100%;
+			padding: 0.5em;
+			resize: none;
+			background-color: transparent;
+		}
+	}
+
+	
 }
