@@ -1,0 +1,19 @@
+@use '../../styles/vars';
+
+.header {
+	height: 70px;
+	background-color: vars.$jet;
+	color: vars.$white;
+
+	.container {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		height: 100%;
+	}
+
+	&__title {
+		font-size: 1.2em;
+		font-weight: bold;
+	}
+}
