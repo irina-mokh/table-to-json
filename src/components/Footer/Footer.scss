@@ -1,12 +1,12 @@
 @use '../../styles/vars';
 
 .footer {
-	border-top: 1px solid vars.$jet;
 	width: 100%;
 	height: 40px;
-	padding: 0.3em 0;
+	padding: 0.5em 0;
 	background-color: vars.$jet;
 	color: vars.$white;
+	box-shadow: 1px 0 5px rgba(0,0,0,0.5);
 	.container {
 		display: flex;
 		justify-content: space-around;
@@ -27,7 +27,8 @@
 		}
 		&__icon {
 			display: block;
-	
+			width: 1.2em;
+			height: 1.2em;
 			margin: 0 0.5em 0 0;
 		}
 		&__text {

@@ -1,20 +1,46 @@
 import { Header } from '../Header';
 import { Footer } from '../Footer';
-import { Editor } from '../Editor';
+import { Table } from '../Table';
 import { INITIAL_DATA } from '../../data';
-import { useState } from 'react';
+import React, { useState } from 'react';
+import { ITableRow } from '../TableRow';
 
 export const App = () => {
   const [data, setData] = useState(INITIAL_DATA);
+  const [isSubmitDisabled, setIsSubmitDisabled] = useState(true);
   return (
     <div className='app'>
+      <h1 className='visually-hidden'>TABLE-JSON editor</h1>
       <Header />
       <main className='app__main'>
         <div className='container content'>
-          <Editor data={data}></Editor>
+          <div className='editor'>
+            <h2 className='app__heading'>Edit data in a table or in JSON:</h2>
+            <form
+              onChange={() => setIsSubmitDisabled(false)}
+              onSubmit={(e: React.FormEvent<HTMLFormElement>) => {
+                e.preventDefault();
+                const newData: Array<ITableRow> = [];
+                const formData = new FormData(e.currentTarget);
+
+                // formData.forEach((value, key) => {
+                //   newData.push({
+                //     [key]: value,
+                //   });
+                // });
+                console.log(newData);
+              }}
+            >
+              <Table data={data}></Table>
+              <button type='submit' className='btn' disabled={isSubmitDisabled}>
+                Save to JSON &#8594;
+              </button>
+            </form>
+          </div>
           <div className='json'>
+            <h2 className='app__heading'>JSON:</h2>
             <textarea
-              defaultValue={JSON.stringify(INITIAL_DATA)}
+              defaultValue={JSON.stringify(data)}
               className='json__textarea'
               onChange={(e) => setData(JSON.parse(e.target.value))}
             ></textarea>

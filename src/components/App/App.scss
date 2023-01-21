@@ -3,32 +3,62 @@
 .app {
 	display: grid;
 	min-height: 100vh;
-	grid-template-rows: 70px 1fr 40px;
+	grid-template-rows: 60px 1fr 40px;
 
 	&__main {
 		padding: 1em;
-		background-color: vars.$gray;
 		height: 100%;
 
 		.content {
-			height: 100%;
+			height: 90%;
 			display: flex;
-			justify-content: space-around;
+			justify-content: space-between;
+			padding: 1em 0;
+		}
+	}
+
+	&__heading {
+		margin: 0 0 0.5em 0;
+	}
+
+	.form {
+		height: 100%;
+		align-self: stretch;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.btn {
+		background-color: transparent;
+		color: vars.$green;
+		border: 1px solid vars.$green;
+		padding: 1em;
+		font-size: 1.2em;
+		text-transform: uppercase;
+		&:hover:enabled {
+			background-color: vars.$green;
+			color: vars.$white;
+		}
+		&:disabled {
+			color: vars.$gray;
+			border-color: vars.$gray;
 		}
 	}
 
 	.json {
 		height: 100%;
-		width: 30vw;
+		min-width: 40vw;
+		color: vars.$white;
+
 		&__textarea {
 			display: block;
 			height: 100%;
 			width: 100%;
 			padding: 0.5em;
 			resize: none;
+			color: vars.$white;
 			background-color: transparent;
 		}
 	}
-
-	
 }

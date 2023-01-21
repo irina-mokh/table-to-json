@@ -1,0 +1,19 @@
+@use '../../styles/vars';
+
+.cell {
+	padding: 0;
+	border: 1px solid vars.$gray;
+	&__input {
+		color: vars.$white;
+		padding: 0.5em;
+		height: 100%;
+		width: 100%;
+		font-size: 1em;
+		background-color: transparent;
+		border: none;
+		outline: none;
+		&:focus {
+			box-shadow: inset 0 0 7px 0 vars.$green;
+		}
+	}
+}
