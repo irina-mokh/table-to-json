@@ -34,6 +34,7 @@ export const App = () => {
           <div className='editor'>
             <h2 className='app__heading'>Edit data in a table or in JSON:</h2>
             <form
+              className='form'
               onChange={(e: React.FormEvent<HTMLFormElement>) => {
                 isValid(e) && setError('');
               }}
@@ -61,6 +62,8 @@ export const App = () => {
               }}
             >
               <Table data={table} setTable={setTable}></Table>
+              <p className='error'>{error}</p>
+
               <button
                 className='btn btn_add'
                 aria-label='add new item'
@@ -71,7 +74,6 @@ export const App = () => {
               >
                 +
               </button>
-              <p className='error'>{error}</p>
               <button type='submit' className='btn' disabled={!!error}>
                 Save to JSON &#8594;
               </button>

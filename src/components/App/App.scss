@@ -6,14 +6,13 @@
 	grid-template-rows: 60px 1fr 40px;
 
 	&__main {
-		padding: 1em;
+		padding: 1em 0;
 		height: 100%;
 
 		.content {
-			height: 90%;
+			height: 100%;
 			display: flex;
 			justify-content: space-between;
-			padding: 1em 0;
 		}
 	}
 
@@ -21,12 +20,20 @@
 		margin: 0 0 0.5em 0;
 	}
 
-	.form {
-		height: 100%;
-		align-self: stretch;
+	.editor {
+		margin: 0 1em;
 		display: flex;
 		flex-direction: column;
-		align-items: center;
+		justify-content: space-between;
+	}
+	.form {
+		padding: 0 1em;
+		flex-grow: 1;
+		display: flex;
+		flex-direction: column;
+		& .btn:last-child {
+			margin-top: auto;
+		}
 	}
 
 	.error {
@@ -41,8 +48,9 @@
 		background-color: transparent;
 		color: vars.$green;
 		border: 1px solid vars.$green;
-		padding: 1em;
+		padding: auto;
 		font-size: 1.2em;
+		height: 2.4em;
 		text-transform: uppercase;
 		&:hover:enabled {
 			background-color: vars.$green;
@@ -53,7 +61,6 @@
 			border-color: vars.$gray;
 		}
 		&_add {
-			display: table-row;
 			width: 100%;
 			padding: 0.1em;
 			margin: 5px 0;
@@ -67,7 +74,7 @@
 
 		&__textarea {
 			display: block;
-			height: 100%;
+			height: 93%;
 			width: 100%;
 			padding: 0.5em;
 			resize: none;

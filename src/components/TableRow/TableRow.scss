@@ -1,13 +1,33 @@
 @use '../../styles/vars';
 .row {
-	&__delete {
-		display: none;
+	cursor: grab;
+	border-top: 1px dotted vars.$gray;
+	position: relative;
+	
+	//moving icon
+	td:first-child:before {
+		display: block;
+		content: '\2058';
 		position: absolute;
+		width: 1em;
+		height: 1em;
+		left: -1em;
+		top: 0;
+		
+	}
+	&:hover td:first-child:before {
+		color: vars.$green;
+	}
+
+	//row delete button
+	&__delete {
+		position: absolute;
+		right: -2em;
+		opacity: 0;
 		background-color: transparent;
 		border: none;
 		padding: 5px;
 		color: vars.$white;
-		opacity: 0.6;
 		&:hover {
 			opacity: 1;
 		}
@@ -16,19 +36,25 @@
 		}
 	}
 	&:hover &__delete {
-		display: block;
-		
+		opacity: 0.7;
+		&:hover {
+			opacity: 1;
+		}
+		&:active {
+			opacity: 0.9;
+		}
 	}
-
 }
+
 .cell {
 	padding: 0;
-	border: 1px solid vars.$gray;
+	border: 1px dotted vars.$gray;
 	&__input {
-		color: vars.$white;
-		padding: 0.5em;
 		height: 100%;
 		width: 100%;
+		padding: 0.5em;
+		cursor: grab;
+		color: vars.$white;
 		font-size: 1em;
 		background-color: transparent;
 		border: none;
@@ -37,6 +63,8 @@
 			box-shadow: inset 0 0 7px 0 vars.$green;
 		}
 	}
+
+	// cell for delete button
 	&_delete {
 		display: flex;
 		justify-items: center;
