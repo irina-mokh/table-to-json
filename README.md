@@ -1,40 +1,40 @@
-### Вопрос 1
+# Вопрос 1
 var xxx = 4;
+
 function test1() {
 return(xxx === 4 && 'Cool');
 }
+
 function test2() {
 return(xxx === 4 || 'Cool');
 }
 
-Ответ:
+## Ответ:
 test1(); // --> 'Cool'
+
 Опрератор && возвращает первое ложное значение,а т.к. в данном случае все значение истины, то возвращается последнее - 'Cool'
 
 test2();// --> true
+
 Оператор || возвращает первое истиннное значение, в данном случае xxx === 4 -->true (если все значения false --> false)
 
-### Вопрос 2
+# Вопрос 2
 Для чего используется метод preventDefault объекта события при работе с DOM
 (event.preventDefault())?
 Приведите пример использования.
 
-Ответ:
+## Ответ:
 Метод события preventDefault используется для отмены дефолтного поведения при наступлении данного события.
+
 Например, произвести валидацию формы при ее сабмите.
-//TODO: ссылку на пример в задании!
 
-### Тестовая задача
+[Пример в задании](https://github.com/irina-mokh/table-to-json/blob/ec17d3b49168ae1ed0d85aa036802c06910aaefa/src/components/App/index.tsx#L42)
 
-
-# Getting Started with Create React App
+# Тестовая задача
+Деплой: https://table-to-json.netlify.app/
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
 In the project directory, you can run:
-
 ## `npm start`
 
 Runs the app in the development mode.\
