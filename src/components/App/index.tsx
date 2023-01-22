@@ -22,13 +22,19 @@ export const App = () => {
                 e.preventDefault();
                 const newData: Array<ITableRow> = [];
                 const formData = new FormData(e.currentTarget);
+                const names = formData.getAll('name');
+                names.forEach((name) => {
+                  newData.push({
+                    name: String(name),
+                    value: '',
+                  });
+                });
+                const values = formData.getAll('value');
+                for (let i = 0; i < values.length; i++) {
+                  newData[i].value = String(values[i]);
+                }
 
-                // formData.forEach((value, key) => {
-                //   newData.push({
-                //     [key]: value,
-                //   });
-                // });
-                console.log(newData);
+                setData(newData);
               }}
             >
               <Table data={data}></Table>
@@ -40,7 +46,7 @@ export const App = () => {
           <div className='json'>
             <h2 className='app__heading'>JSON:</h2>
             <textarea
-              defaultValue={JSON.stringify(data)}
+              value={JSON.stringify(data)}
               className='json__textarea'
               onChange={(e) => setData(JSON.parse(e.target.value))}
             ></textarea>
