@@ -2,12 +2,12 @@
 
 .app {
 	display: grid;
-	min-height: 100vh;
 	grid-template-rows: 60px 1fr 40px;
+	min-height: 100vh;
 
 	&__main {
-		padding: 1em 0;
 		height: 100%;
+		padding: 1em 0;
 
 		.content {
 			height: 100%;
@@ -26,11 +26,12 @@
 		flex-direction: column;
 		justify-content: space-between;
 	}
+
 	.form {
-		padding: 0 1em;
 		flex-grow: 1;
 		display: flex;
 		flex-direction: column;
+		padding: 0 1em;
 		& .btn:last-child {
 			margin-top: auto;
 		}
@@ -45,12 +46,12 @@
 
 	.btn {
 		display: block;
-		background-color: transparent;
-		color: vars.$green;
-		border: 1px solid vars.$green;
 		padding: auto;
-		font-size: 1.2em;
 		height: 2.4em;
+		color: vars.$green;
+		background-color: transparent;
+		border: 1px solid vars.$green;
+		font-size: 1.2em;
 		text-transform: uppercase;
 		&:hover:enabled {
 			background-color: vars.$green;
@@ -60,6 +61,7 @@
 			color: vars.$gray;
 			border-color: vars.$gray;
 		}
+		
 		&_add {
 			width: 100%;
 			padding: 0.1em;

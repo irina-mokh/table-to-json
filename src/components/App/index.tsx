@@ -1,17 +1,18 @@
+import React, { useEffect, useState } from 'react';
 import { Header } from '../Header';
 import { Footer } from '../Footer';
 import { Table } from '../Table';
 import { INITIAL_DATA } from '../../data';
-import React, { useEffect, useState } from 'react';
 import { ITableRow } from '../TableRow';
 
 export const App = () => {
   const [data, setData] = useState(INITIAL_DATA);
   const [table, setTable] = useState(data);
+  const [error, setError] = useState('');
+
   useEffect(() => {
     setTable(data);
   }, [data]);
-  const [error, setError] = useState('');
 
   function isValid(e: React.FormEvent<HTMLFormElement>) {
     const formData = new FormData(e.currentTarget);
@@ -25,6 +26,7 @@ export const App = () => {
       return true;
     }
   }
+
   return (
     <div className='app'>
       <h1 className='visually-hidden'>TABLE-JSON editor</h1>
@@ -63,7 +65,6 @@ export const App = () => {
             >
               <Table data={table} setTable={setTable}></Table>
               <p className='error'>{error}</p>
-
               <button
                 className='btn btn_add'
                 aria-label='add new item'
@@ -72,7 +73,7 @@ export const App = () => {
                   setTable([...table, { name: '', value: '' }]);
                 }}
               >
-                +
+                + add row
               </button>
               <button type='submit' className='btn' disabled={!!error}>
                 Save to JSON &#8594;
