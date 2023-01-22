@@ -12,7 +12,13 @@ export const Table = ({ data, setTable }: TableProps) => {
       newTable[i] = newRow;
       setTable(newTable);
     };
-    return <TableRow key={i} {...item} setRow={setRow} />;
+
+    const deleteRow = () => {
+      const newTable = [...data];
+      newTable.splice(i, 1);
+      setTable(newTable);
+    };
+    return <TableRow key={i} {...item} setRow={setRow} deleteRow={deleteRow} />;
   });
   return (
     <>

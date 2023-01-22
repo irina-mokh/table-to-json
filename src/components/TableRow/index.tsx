@@ -5,11 +5,12 @@ export interface ITableRow {
 
 interface TableRowProps extends ITableRow {
   setRow: (newRow: ITableRow) => void;
+  deleteRow: () => void;
 }
 
-export const TableRow = ({ name, value, setRow }: TableRowProps) => {
+export const TableRow = ({ name, value, setRow, deleteRow }: TableRowProps) => {
   return (
-    <tr>
+    <tr className='row'>
       <td className='cell'>
         <input
           type='text'
@@ -27,6 +28,11 @@ export const TableRow = ({ name, value, setRow }: TableRowProps) => {
           className='cell__input'
           onChange={(e) => setRow({ name: name, value: e.target.value })}
         ></input>
+      </td>
+      <td className='cell_delete'>
+        <button onClick={deleteRow} className='row__delete'>
+          🗙
+        </button>
       </td>
     </tr>
   );
