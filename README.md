@@ -31,7 +31,7 @@ test2();// --> true
 [Пример в задании](https://github.com/irina-mokh/table-to-json/blob/ec17d3b49168ae1ed0d85aa036802c06910aaefa/src/components/App/index.tsx#L42)
 
 # Тестовая задача
-Деплой: https://table-to-json.netlify.app/
+## Деплой: https://table-to-json.netlify.app
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 In the project directory, you can run:
