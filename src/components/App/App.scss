@@ -29,7 +29,15 @@
 		align-items: center;
 	}
 
+	.error {
+		height: 0.8em;
+		color: vars.$red;
+		margin: 0 0 1em 0;
+		font-size: 0.8em;
+	}
+
 	.btn {
+		display: block;
 		background-color: transparent;
 		color: vars.$green;
 		border: 1px solid vars.$green;
@@ -43,6 +51,12 @@
 		&:disabled {
 			color: vars.$gray;
 			border-color: vars.$gray;
+		}
+		&_add {
+			display: table-row;
+			width: 100%;
+			padding: 0.1em;
+			margin: 5px 0;
 		}
 	}
 
